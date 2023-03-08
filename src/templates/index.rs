@@ -20,7 +20,6 @@ fn index_page<G: Html>(cx: Scope) -> View<G> {
                 }
 
     }
-
 }
 
 #[engine_only_fn]

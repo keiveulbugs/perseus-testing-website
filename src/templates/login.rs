@@ -35,18 +35,17 @@ fn login<G: Html>(cx: Scope) -> View<G> {
                         div(class="w-full max-w-2xl") {
                             div(class="font-semibold py-5 px-10") {
                                 p {"Login"}
-                                
+
                             }
                         }
 
                     }
-                    
+
                 }
             }
         }
     }
 }
-
 
 #[engine_only_fn]
 fn head(cx: Scope) -> View<SsrNode> {

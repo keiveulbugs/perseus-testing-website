@@ -9,7 +9,6 @@ pub fn get_error_views<G: Html>() -> ErrorViews<G> {
         match err {
             ClientError::ServerError { status, message: _ } => match status {
                 404 => (
-                    
                     view! {cx,
                         Layout(title="Page not found:(") {
                         div(style = "display: flex; flex-direction: column; justify-content: center; align-items: center; height: 95vh;") {
@@ -21,7 +20,6 @@ pub fn get_error_views<G: Html>() -> ErrorViews<G> {
                             a ( href="") {"home"}
                         }
                     }},
-
                     view! {cx, title{ "Page not found:( "}},
                 ),
                 // 4xx is a client error
