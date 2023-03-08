@@ -1,0 +1,18 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+
+@layer components {
+    .company-navbar {
+        @apply navbar bg-company shadow-md shadow-company-shadow;        
+    }
+    .company-footer {
+        @apply footer p-10 bg-company text-white justify-around;
+    }
+    .company-navbutton-effect {
+        @apply block hover:text-company-hover transition-all hover:scale-110 ease-in-out;
+    }
+}
