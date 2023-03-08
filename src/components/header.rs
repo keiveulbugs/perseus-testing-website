@@ -6,22 +6,34 @@ pub fn Layout<'a, G: Html>(
     LayoutProps { title, children }: LayoutProps<'a, G>,
 ) -> View<G> {
     let children = children.call(cx);
-    //let open = create_signal(cx, false);
     let theme_state = create_signal(cx, false);
 
-    let mut theme = "light";
-    if *theme_state.get() {
-      theme="dark"
-    } else {
-      theme="light"
-    }
+
+    // this also doesnt seem to work
+    let mut theme = create_memo(cx, || 
+      if *theme_state.get() {
+        "dark"
+      } else {
+        "light"
+      }
+    
+    );
+    
 
     view! { cx,
       // tailwind.css
       
       
       html (
-        data-theme=theme
+        // checking if this works
+        data-theme= create_memo(cx, || 
+          if *theme_state.get() {
+            "dark"
+          } else {
+            "light"
+          }
+        
+        )
 
       )
       
